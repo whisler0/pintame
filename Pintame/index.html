@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pintame</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Pantalla principal (home-screen) -->
+  <div id="home-screen" class="screen active">
+    <div class="background-container">
+      <img src="image.png" class="background-image" alt="Background">
+    </div>
+    <div class="content">
+      <h1>Bienvenido</h1>
+      <button class="btn" onclick="navigateToMenu()">Inicio</button>
+    </div>
+  </div>
+
+  <!-- Pantalla del menú (menu-screen) -->
+  <div id="menu-screen" class="screen hidden">
+    <div class="background-container">
+      <img src="PINTAME.jpg" class="background-image" alt="Background">
+    </div>
+    <div class="menu-content">
+      <h2>Menú Principal</h2>
+      <button class="menu-btn" onclick="openTab('medicion')">Medición</button>
+      <button class="menu-btn" onclick="openTab('diseno')">Diseño</button>
+      <button class="menu-btn" onclick="openTab('ejecucion')">Ejecución</button>
+    </div>
+  </div>
+
+  <!-- Pestaña de Medición -->
+  <div id="medicion-screen" class="screen hidden">
+    <h2>Medición</h2>
+    <form id="medicion-form">
+      <div class="form-group">
+        <label for="codigo">Código de la tienda:</label>
+        <input type="text" id="codigo" name="codigo" placeholder="Ingresa el código de la tienda">
+      </div>
+      <div class="form-group">
+        <label for="ancho">Ancho:</label>
+        <input type="text" id="ancho" name="ancho" placeholder="Ingresa el ancho">
+      </div>
+      <div class="form-group">
+        <label for="altura">Altura:</label>
+        <input type="text" id="altura" name="altura" placeholder="Ingresa la altura">
+      </div>
+      <div class="form-group">
+        <label for="tipo-vinil">Tipo de vinil:</label>
+        <select id="tipo-vinil" name="tipo-vinil">
+          <option value="vinil-normal">Vinil normal</option>
+          <option value="vinil-especial">Vinil especial</option>
+          <option value="banner">banner</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="observaciones">Observaciones:</label>
+        <textarea id="observaciones" name="observaciones" placeholder="Escribe observaciones"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="imagen-nitada">Imagen Nitada:</label>
+        <input type="file" id="imagen-nitada" name="imagen-nitada" accept="image/*">
+      </div>
+      <div class="form-group">
+        <label for="imagen-editada">Imagen Editada:</label>
+        <input type="file" id="imagen-editada" name="imagen-editada" accept="image/*">
+      </div>
+      <button type="submit" class="btn-submit">Enviar</button>
+    </form>
+    <button class="btn" onclick="navigateBack()">Volver al Menú</button>
+  </div>
+
+  <!-- Pestaña de Diseño -->
+  <div id="diseno-screen" class="screen hidden">
+    <h2>Diseño</h2>
+    <form id="diseno-form">
+      <div class="form-group">
+        <label for="proyecto">Nombre del proyecto:</label>
+        <input type="text" id="proyecto" name="proyecto" placeholder="Ingresa el nombre del proyecto">
+      </div>
+      <div class="form-group">
+        <label for="cliente">Nombre del cliente:</label>
+        <input type="text" id="cliente" name="cliente" placeholder="Ingresa el nombre del cliente">
+      </div>
+      <div class="form-group">
+        <label for="imagen-referencia">Imagen de referencia:</label>
+        <input type="file" id="imagen-referencia" name="imagen-referencia" accept="image/*">
+      </div>
+      <div class="form-group">
+        <label for="descripcion">Descripción del diseño:</label>
+        <textarea id="descripcion" name="descripcion" placeholder="Describe el diseño..."></textarea>
+      </div>
+      <button type="submit" class="btn-submit">Enviar</button>
+    </form>
+    <button class="btn" onclick="navigateBack()">Volver al Menú</button>
+  </div>
+
+  <!-- Pestaña de Ejecución -->
+  <div id="ejecucion-screen" class="screen hidden">
+    <h2>Ejecución</h2>
+    <form id="ejecucion-form">
+      <div class="form-group">
+        <label for="codigo-ejecucion">Código de ejecución:</label>
+        <input type="text" id="codigo-ejecucion" name="codigo-ejecucion" placeholder="Ingresa el código de ejecución">
+      </div>
+      <div class="form-group">
+        <label for="fecha-ejecucion">Fecha de ejecución:</label>
+        <input type="date" id="fecha-ejecucion" name="fecha-ejecucion">
+      </div>
+      <div class="form-group">
+        <label for="estado">Estado del proyecto:</label>
+        <select id="estado" name="estado">
+          <option value="en-proceso">En proceso</option>
+          <option value="completado">Completado</option>
+          <option value="pendiente">Pendiente</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="comentarios">Comentarios adicionales:</label>
+        <textarea id="comentarios" name="comentarios" placeholder="Agrega comentarios adicionales..."></textarea>
+      </div>
+      <button type="submit" class="btn-submit">Enviar</button>
+    </form>
+    <button class="btn" onclick="navigateBack()">Volver al Menú</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
